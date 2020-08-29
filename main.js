@@ -82,6 +82,10 @@ const STORE = {
   numQuestions: 7,
   score: 0,
   correctAnswers: 0,
+
+  // quizStarted: false,
+  // questionNumber: 0,
+  // score: 0
 };
 
 //Renders the start page
@@ -98,7 +102,7 @@ function startHtml() {
                <button type="button" id= "start-button" class="startButton button">Start</button>
            </div>
        </section>
-   </section>`)
+   </section>`);
 }
 
 function startPage() {
@@ -116,11 +120,11 @@ function startPage() {
 function questionsHtml() {
   let questionNumber = STORE.questionNumber-1;
   let options = STORE.questions[questionNumber-1].answers.map((ansValue, ansIndex) => {
-    console.log(ansIndex+1);
+    // console.log(ansIndex+1);
     return `<li class='ansVal'>
                    <input class="radio" type="radio" tabindex="${ansIndex+1}" id="${ansIndex}" value="${ansValue}" name="answer" required>
                    <label class="sizeMe" for="${ansIndex}">${ansValue}</label>
-               </li>`
+               </li>`;
   });
   options = options.join('');
   let questionsHtml2 =
@@ -176,9 +180,9 @@ function submitAnswer(ans) {
 
   }
   generateCurrentScore();
-  $('.test').html(result)
+  $('.test').html(result);
   $('.nextButton').on('click', function (event) {
-      renderPage();
+    renderPage();
   });
 
 
@@ -195,7 +199,7 @@ function correctAnswerHtml() {
   return `<h3>Correct!!</h3>
        <img src="https://preview.redd.it/ttsrz526zi811.jpg?auto=webp&s=8e82aac0eec65d8ab81dcc724552c6b8db39e7ff" alt="Happy Charlie" class="images" width="200px">
          <div class="ans"><p class="sizeMe">You're a true fan!</p></div>
-         <button type="button" class="nextButton button">Next</button>`
+         <button type="button" class="nextButton button">Next</button>`;
 }
 
 function wrongAnswerHtml() {
@@ -215,7 +219,7 @@ function wrongAnswerHtml() {
 //Updates question number and score after each submission
 //Returns final score
 function generateCurrentScore() {
-  let scores = getScoreHtml()
+  let scores = getScoreHtml();
   $('.scores').html(scores);
 }
 
@@ -225,7 +229,7 @@ function updateQuestionNumber(){
 }
 
 function getScoreHtml() {
-  return `<h2>Your current score is ${STORE.correctAnswer}/${STORE.numQuestions}</h2>`
+  return `<h2>Your current score is ${STORE.correctAnswer}/${STORE.numQuestions}</h2>`;
 }
 
 function updateScore(){
@@ -251,11 +255,11 @@ function finalScore() {
 //Allows user to restart quiz
 function finalPage(){
 
-const great = [ 'Nice job Champ!', 'http://cdn.collider.com/wp-content/uploads/2011/06/its-always-sunny-in-philadelphia-image-2.jpg', 'Dennis dancing', 'How many hours have you spent watching this show?!' ];
-const good = [ 'Good, but you can do better!', 'https://images.static-bluray.com/reviews/8734_5.jpg', 'The gang raising their hands', 'Decent, but needs improvement' ];
-const bad = [ 'Have you even seen the show?', 'https://pmcdeadline2.files.wordpress.com/2016/04/its-always-sunny-in-philadelphia.jpg?w=630&h=383&crop=1', 'The gang is mad', 'Please go watch a few episodes right now.' ]; 
+  const great = [ 'Nice job Champ!', 'http://cdn.collider.com/wp-content/uploads/2011/06/its-always-sunny-in-philadelphia-image-2.jpg', 'Dennis dancing', 'How many hours have you spent watching this show?!' ];
+  const good = [ 'Good, but you can do better!', 'https://images.static-bluray.com/reviews/8734_5.jpg', 'The gang raising their hands', 'Decent, but needs improvement' ];
+  const bad = [ 'Have you even seen the show?', 'https://pmcdeadline2.files.wordpress.com/2016/04/its-always-sunny-in-philadelphia.jpg?w=630&h=383&crop=1', 'The gang is mad', 'Please go watch a few episodes right now.' ]; 
 
-let array= [];
+  let array= [];
 
   if (STORE.score >= 6){ 
     array = great; 
@@ -265,9 +269,9 @@ let array= [];
   } 
   else { 
     array = bad; 
-    }
+  }
 
-return `<h3>${array[0]}</h3> 
+  return `<h3>${array[0]}</h3> 
   <img src="${array[1]}" alt="${array[2]}" class="images"> 
   <div class="cen">
   <h4>Your score is ${STORE.score} / 7</h4> 
