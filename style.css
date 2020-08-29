@@ -37,7 +37,7 @@ fieldset {
   margin: 0px auto;
   text-align: center;
   font-family: 'Roboto Slab', serif;
-  font-size: 36px;
+  font-size: 33px;
   font-weight: bold;
   color: white;
 }
@@ -230,6 +230,9 @@ button {
     font-size: 30px;
   }
 
+  .resultForm {
+    margin-top: 1em;
+  }
   .main .formContainer {
     width: 700px;
   }

@@ -38,7 +38,7 @@ function renderQuestionHtml() {
   const questionText = STORE.questions[STORE.questionNumber].question;
   return `
   <div aria-live= "polite" class="formContainer">
-    <p class="questionNumber">Question: ${1 + STORE.questionNumber}/10</p>
+    <p class="questionNumber">Question: ${1 + STORE.questionNumber}/7</p>
     <p class="score">Score: ${STORE.score}</p>
     <form id='answerForm' class='answerForm'>
     <fieldset>
@@ -92,7 +92,7 @@ function getResultHtml(val) {
   if (result === 'correct') {
     return `
     <div aria-live= "polite" class="formContainer">
-      <p class="questionNumber">Question: ${STORE.questionNumber + 1}/10</p>
+      <p class="questionNumber">Question: ${STORE.questionNumber + 1}/7</p>
       <p class="score">Score: ${STORE.score}</p>
       <form id='resultForm' class='resultForm'>
         <fieldset>
@@ -109,7 +109,7 @@ function getResultHtml(val) {
   } else {
     return `
     <div aria-live= "polite" class="formContainer">
-      <p class="questionNumber">Question: ${STORE.questionNumber + 1}/10</p>
+      <p class="questionNumber">Question: ${STORE.questionNumber + 1}/7</p>
       <p class="score">Score: ${STORE.score}</p>
       <form id='resultForm' class='resultForm'>
         <fieldset>
@@ -156,10 +156,10 @@ function generateFinalResultsHtml() {
   let imgSrc;
   let grade;
   let score = STORE.score;
-  if (score >= 8) {
+  if (score >= 6) {
     grade = 'You are a Sunny legend!';
     imgSrc = 'images/star.png';
-  } else if (score >= 6) {
+  } else if (score >= 4) {
     grade = 'You are a rising star!';
     imgSrc = 'images/risingstar.png';
   } else {
@@ -171,7 +171,7 @@ function generateFinalResultsHtml() {
     <form id='finalResultForm' class='finalResultForm'>
       <fieldset>
         <legend class="questionText">
-        <p>Final score: ${score}/10.<br><br><br>
+        <p>Final score: ${score}/7.<br><br><br>
         ${grade}</p>
         <img src="${imgSrc}" alt="grade">
         <button type="submit">Restart Quiz</button>

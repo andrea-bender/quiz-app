@@ -86,7 +86,7 @@ const STORE = {
     this.images.set('Mac', 'images/fatMac.jpg');
     this.images.set('Frankie Fast Hands', 'images/FrankieFastHands.png');
     this.images.set('People’s knees', 'images/charlie.jpg');
-    this.images.set('Honey and Vinegar', 'images/honeyAndVinegar.jpg');
+    this.images.set('Honey and Vinegar', 'images/handv.jpg');
   }
 };
 
