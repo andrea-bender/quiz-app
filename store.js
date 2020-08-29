@@ -85,7 +85,7 @@ const STORE = {
     this.images.set('TGI Fridays', 'images/TGIF.jpg');
     this.images.set('Mac', 'images/fatMac.jpg');
     this.images.set('Frankie Fast Hands', 'images/FrankieFastHands.png');
-    this.images.set("People's knees", 'images/charlie.jpg');
+    this.images.set('People’s knees', 'images/charlie.jpg');
     this.images.set('Honey and Vinegar', 'images/honeyAndVinegar.jpg');
   }
 };
