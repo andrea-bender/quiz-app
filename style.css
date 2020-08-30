@@ -52,7 +52,7 @@ fieldset {
 
 .main h2 {
   margin-bottom: 100px;
-  width: 250px;
+  width: 13em;
   font-size: 22px;
   font-weight: bold;
   line-height: 30px;
@@ -154,8 +154,8 @@ button {
 }
 
 .main .answerImage {
-  margin-top: 20px;
-  margin-bottom: 45px;
+  margin-top: 7px; 
+  margin-bottom: 27px; 
   width: 220px;
 }
 
